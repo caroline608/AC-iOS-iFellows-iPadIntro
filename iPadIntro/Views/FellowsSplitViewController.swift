@@ -10,10 +10,12 @@ import UIKit
 
 class FellowsSplitViewController: UISplitViewController {
 
+     public var fellows = [Fellow]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        fellows = JSONParser.parseJSONFile(filename: "fellows", type: "json")
+      
     }
 
     
