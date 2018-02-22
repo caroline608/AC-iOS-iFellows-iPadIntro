@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DetailViewController-->
+        <scene sceneID="3lD-h3-EVi">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" title="DetailViewController" id="i2K-B9-V0B" customClass="DetailViewController" customModule="iPadIntro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q4T-aq-ECq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="dyg-HZ-Wco"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bio" id="E37-xG-nlJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOR-RM-HU8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="105"/>
+        </scene>
+        <!--FellowsTableViewController-->
+        <scene sceneID="mnu-rK-sHm">
+            <objects>
+                <tableViewController storyboardIdentifier="FellowsTableViewController" title="FellowsTableViewController" clearsSelectionOnViewWillAppear="NO" id="lsm-7v-lHF" customClass="FellowsTableViewController" customModule="iPadIntro" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ufV-hu-6Ca">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FellowCell" id="bWH-9b-g7z" customClass="FellowCell" customModule="iPadIntro" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bWH-9b-g7z" id="82p-BA-N6r">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Kke-1U-HIH" kind="showDetail" id="tfN-4r-SyO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lsm-7v-lHF" id="pau-SH-Lqq"/>
+                            <outlet property="delegate" destination="lsm-7v-lHF" id="IT7-1Q-IxA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fellows" id="O0T-qx-3tr"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVy-fx-HWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="-559"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="weV-o7-0tx">
+            <objects>
+                <navigationController id="vaI-as-Y6X" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="01g-Tq-DgY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lsm-7v-lHF" kind="relationship" relationship="rootViewController" id="RaJ-L8-RRe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fXK-Lb-NeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="26" y="-559"/>
+        </scene>
+        <!--FellowsSplitViewController-->
+        <scene sceneID="Mml-re-eiY">
+            <objects>
+                <splitViewController storyboardIdentifier="FellowsSplitViewController" title="FellowsSplitViewController" id="5MY-Yd-TIN" customClass="FellowsSplitViewController" customModule="iPadIntro" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="vaI-as-Y6X" kind="relationship" relationship="masterViewController" id="pWH-Fp-YaY"/>
+                        <segue destination="Kke-1U-HIH" kind="relationship" relationship="detailViewController" id="wO0-rm-zJC"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZWy-mn-lal" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-926" y="-227"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WXh-Rh-njv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kke-1U-HIH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tAW-Gy-hP3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="i2K-B9-V0B" kind="relationship" relationship="rootViewController" id="vaf-yy-NJS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAu-54-ReE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.600000000000001" y="105.24737631184409"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="tfN-4r-SyO"/>
+    </inferredMetricsTieBreakers>
+</document>
